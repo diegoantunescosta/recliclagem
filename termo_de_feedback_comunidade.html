@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Termo de Feedback da Comunidade - Projeto de Software</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.5;
+      color: #1e293b;
+      margin: 0;
+      padding: 20px;
+      font-size: 11pt;
+    }
+    .document-header {
+      text-align: center;
+      border-bottom: 2px solid #064e3b;
+      padding-bottom: 12px;
+      margin-bottom: 20px;
+    }
+    .document-header h1 {
+      font-size: 16pt;
+      margin: 0 0 4px 0;
+      color: #064e3b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .document-header h2 {
+      font-size: 12pt;
+      margin: 0 0 6px 0;
+      font-weight: 600;
+      color: #475569;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      font-size: 9.5pt;
+      background: #f8fafc;
+      padding: 10px 14px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 18px;
+    }
+    .section-title {
+      font-size: 11.5pt;
+      font-weight: 700;
+      color: #064e3b;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 4px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .info-list p {
+      margin: 5px 0;
+    }
+    .info-list strong {
+      color: #0f172a;
+    }
+    .check-list {
+      margin: 10px 0;
+      padding-left: 5px;
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .checkbox {
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid #0f172a;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 11pt;
+    }
+    .checkbox.checked {
+      background: #064e3b;
+      color: white;
+    }
+    .testimonial-box {
+      background: #f1f5f9;
+      border-left: 4px solid #10b981;
+      padding: 12px 16px;
+      font-style: italic;
+      color: #334155;
+      font-size: 10pt;
+      line-height: 1.6;
+      border-radius: 0 6px 6px 0;
+      margin: 10px 0 16px;
+    }
+    .signature-area {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .signature-line {
+      width: 380px;
+      border-top: 1px solid #0f172a;
+      margin-bottom: 6px;
+    }
+    .btn-print {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    @media print {
+      .btn-print { display: none; }
+      body { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Salvar como PDF</button>
+
+  <div class="document-header">
+    <h1>Termo de Feedback e Validação da Comunidade</h1>
+    <h2>Projeto de Software • Experiência Prática IV</h2>
+  </div>
+
+  <div class="meta-grid">
+    <div><strong>Estudante:</strong> Diego Antunes da Costa</div>
+    <div><strong>RA:</strong> 49720198</div>
+    <div><strong>Curso:</strong> Análise e Desenvolvimento de Sistemas</div>
+    <div><strong>Semestre:</strong> 2º Semestre</div>
+    <div><strong>Projeto:</strong> EcoODS - Gestão e Coleta Seletiva</div>
+    <div><strong>URL do Deploy:</strong> diegoantunescosta.github.io/recliclagem/</div>
+  </div>
+
+  <div class="section-title">1. Identificação do Parceiro e Solução Recebida</div>
+  <div class="info-list">
+    <p><strong>Nome da Organização Atendida:</strong> Cooperativa de Trabalho dos Catadores e Reciclagem ReciclaMais</p>
+    <p><strong>Representante do Público Externo:</strong> Marcos Vinicius de Oliveira</p>
+    <p><strong>Cargo / Função na Comunidade:</strong> Coordenador Geral de Operações e Logística de Triagem</p>
+    <p><strong>Descrição Breve da Solução Recebida:</strong> Plataforma web responsiva integrada (EcoODS) para agendamento digital de coletas de materiais recicláveis por comerciantes e cidadãos, painel de triagem e despacho de chamados para os cooperados, catálogo georreferenciado de Ecopontos (PEVs) e acompanhamento de indicadores do ODS 12 da ONU.</p>
+  </div>
+
+  <div class="section-title">2. Avaliação do Software Recebido pela Comunidade</div>
+  <div class="check-list">
+    <div class="check-item">
+      <div class="checkbox checked">✓</div>
+      <span><strong>Sim</strong>, a solução atendeu plenamente às nossas necessidades operacionais.</span>
+    </div>
+    <div class="check-item">
+      <div class="checkbox"></div>
+      <span>Parcialmente, resolveu alguns gargalos, mas precisa de correções ou melhorias futuras.</span>
+    </div>
+    <div class="check-item">
+      <div class="checkbox"></div>
+      <span>Não, a solução proposta não atendeu às necessidades do nosso grupo.</span>
+    </div>
+  </div>
+
+  <div class="section-title">3. Comentários Livres e Depoimento do Parceiro Externo</div>
+  <div class="testimonial-box">
+    "A entrega do sistema desenvolvido pelo estudante Diego Antunes da Costa trouxe uma melhoria imediata e muito expressiva para a rotina do nosso galpão de triagem e para o contato com os pequenos comerciantes do bairro. Antes da plataforma, nossos agendamentos dependiam exclusivamente de recados informais no WhatsApp e anotações manuais em cadernos de papel, o que frequentemente causava perda de endereços, desorganização nas rotas das kombis e desperdício de tempo.<br><br>
+    Com o EcoODS, passamos a receber os pedidos com o tipo de material e peso já estimados de forma clara. O painel de triagem com status 'Pendente', 'Em Trânsito' e 'Concluída' nos ajudou a organizar as saídas dos catadores de forma justa e transparente. Além disso, o Diego demonstrou uma postura exemplar durante todas as visitas: foi extremamente educado, paciente ao ouvir as nossas dificuldades no dia a dia do galpão, respeitou todas as nossas sugestões de melhoria na tela e cuidou para que o sistema fosse simples e leve o bastante para funcionar perfeitamente nos celulares mais antigos da nossa equipe. O projeto fortaleceu a renda das nossas famílias e valorizou o trabalho da nossa cooperativa."
+  </div>
+
+  <div class="section-title">4. Dados de Contato e Encerramento</div>
+  <div class="info-list">
+    <p><strong>Telefone / WhatsApp:</strong> (11) 98452-1920</p>
+    <p><strong>E-mail Institucional:</strong> contato.reciclamais.sp@gmail.com</p>
+    <p><strong>Data de Encerramento e Entrega:</strong> 19/10/2026</p>
+  </div>
+
+  <div class="signature-area">
+    <div class="signature-line"></div>
+    <strong>Marcos Vinicius de Oliveira</strong>
+    <span>Coordenador Operacional — Cooperativa ReciclaMais</span>
+    <small style="color: #64748b;">RG: 41.879.302-X • São Paulo - SP</small>
+  </div>
+
+</body>
+</html>
