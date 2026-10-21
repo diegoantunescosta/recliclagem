@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatório Consolidado - Experiência Prática IV - Diego Antunes da Costa</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 20mm 15mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #1e293b;
+      margin: 0;
+      padding: 20px;
+      font-size: 10.5pt;
+    }
+    .header-box {
+      text-align: center;
+      border-bottom: 2px solid #064e3b;
+      padding-bottom: 14px;
+      margin-bottom: 24px;
+    }
+    .header-box h1 {
+      font-size: 18pt;
+      color: #064e3b;
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+    }
+    .header-box h2 {
+      font-size: 13pt;
+      color: #475569;
+      margin: 0;
+      font-weight: 600;
+    }
+    .meta-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+    }
+    .meta-table td {
+      padding: 8px 12px;
+      border: 1px solid #e2e8f0;
+      font-size: 9.5pt;
+    }
+    .meta-table strong {
+      color: #0f172a;
+    }
+    h2.section-heading {
+      color: #064e3b;
+      font-size: 13pt;
+      border-bottom: 1.5px solid #10b981;
+      padding-bottom: 4px;
+      margin-top: 26px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      page-break-after: avoid;
+    }
+    h3.sub-heading {
+      color: #0f172a;
+      font-size: 11pt;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      page-break-after: avoid;
+    }
+    p {
+      margin: 0 0 10px 0;
+      text-align: justify;
+    }
+    .box-highlight {
+      background: #f1f5f9;
+      border-left: 4px solid #10b981;
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-size: 10pt;
+    }
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 14px 0;
+      font-size: 9.5pt;
+    }
+    table.data-table th {
+      background: #e2e8f0;
+      color: #0f172a;
+      padding: 8px;
+      border: 1px solid #cbd5e1;
+      text-align: left;
+    }
+    table.data-table td {
+      padding: 8px;
+      border: 1px solid #cbd5e1;
+      vertical-align: top;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .signature-area {
+      margin-top: 35px;
+      text-align: center;
+      page-break-inside: avoid;
+    }
+    .signature-line {
+      width: 350px;
+      border-top: 1px solid #0f172a;
+      margin: 0 auto 6px auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-box">
+    <h1>Relatório Final Consolidado — Experiência Prática IV</h1>
+    <h2>Disciplina: Projeto de Software • Encerramento do Ciclo de Vida (SDLC)</h2>
+  </div>
+
+  <table class="meta-table">
+    <tr>
+      <td><strong>Estudante:</strong> Diego Antunes da Costa</td>
+      <td><strong>RA:</strong> 49720198</td>
+    </tr>
+    <tr>
+      <td><strong>Curso / Semestre:</strong> Análise e Desenvolvimento de Sistemas — 2º Semestre</td>
+      <td><strong>Instituição:</strong> Cruzeiro do Sul Virtual</td>
+    </tr>
+    <tr>
+      <td><strong>Nome do Projeto:</strong> EcoODS – Plataforma Comunitária de Gestão e Coleta Seletiva</td>
+      <td><strong>ODS Focado:</strong> ODS 12 – Consumo e Produção Responsáveis</td>
+    </tr>
+    <tr>
+      <td><strong>Repositório Público:</strong> github.com/diegoantunescosta/recliclagem</td>
+      <td><strong>Deploy em Produção:</strong> diegoantunescosta.github.io/recliclagem/</td>
+    </tr>
+  </table>
+
+  <h2 class="section-heading">1. Síntese Executiva do Projeto</h2>
+  <div class="box-highlight">
+    Durante o diagnóstico no campo de estudo, identificou-se uma grave ineficiência na gestão e no descarte inadequado de materiais recicláveis gerados por pequenos comerciantes e moradores locais, decorrente da falta de visibilidade sobre pontos de coleta e da comunicação fragmentada com catadores e cooperativas da região (alinhado ao ODS 12 – Consumo e Produção Responsáveis). Para mitigar essa dor operacional, foi desenvolvido um Produto Mínimo Viável (MVP) em plataforma web responsiva, dotado de módulos de cadastro de descartes, mapeamento geolocalizado de pontos de entrega voluntária e painel de controle para agendamento de coletas. O público parceiro atendido é composto por lideranças de cooperativas comunitárias e comerciantes locais, os quais interagem diariamente com o software por meio de uma interface simplificada: os geradores registram os volumes de materiais disponíveis com fotos e endereços, enquanto os operadores da cooperativa acessam o painel de triagem em seus smartphones para roteirizar as coletas diárias e confirmar os recebimentos, substituindo anotações manuais e promovendo agilidade, transparência e geração de renda sustentável para a comunidade atendida.
+  </div>
+
+  <h2 class="section-heading">2. Desenvolvimento, Implementação e Arquitetura</h2>
+  <h3 class="sub-heading">2.1 Módulos Efetivamente Implementados no MVP</h3>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th style="width: 25%;">História de Usuário</th>
+        <th style="width: 50%;">Descrição de Rotas e Fluxos</th>
+        <th style="width: 25%;">Tecnologias</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>HU01 - Solicitação e Agendamento</strong></td>
+        <td>Formulário interativo para agendamento de retiradas por comerciantes e moradores, contendo seleção de materiais, peso estimado, endereço e data. Validação no cliente e envio para triagem com status inicial 'Pendente'.</td>
+        <td>HTML5 Semântico, CSS3 Flexbox/Grid, JavaScript ES6+, Web Storage API (LocalStorage).</td>
+      </tr>
+      <tr>
+        <td><strong>HU02 - Painel da Cooperativa</strong></td>
+        <td>Tabela dinâmica operacional para a cooperativa gerenciar o ciclo de vida da coleta: transição de status ('Pendente' ➔ 'Em Trânsito' ➔ 'Concluída') e soma automática de quilos ao total acumulado.</td>
+        <td>JavaScript ES6+ (mutação de estado e tabelas dinâmicas), CSS3, LocalStorage.</td>
+      </tr>
+      <tr>
+        <td><strong>HU03 - Pontos de Coleta (PEV)</strong></td>
+        <td>Catálogo de Ecopontos e galpões da região com filtros dinâmicos ('pills') por tipo de resíduo aceito (papelão, plástico, eletrônicos), endereços e horários de funcionamento.</td>
+        <td>HTML5, CSS3 Componentizado, JavaScript ES6+ (High-order functions).</td>
+      </tr>
+      <tr>
+        <td><strong>HU04 - Indicadores e Telemetria</strong></td>
+        <td>Métricas de impacto em tempo real (kg recolhidos, coletas, CO2eq evitado) e módulo de telemetria pós-lançamento com health check, medição de latência e logs de eventos.</td>
+        <td>Performance API, Window.onerror global, Date API, UptimeRobot.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-heading">2.2 Diferenças entre o Planejado (EP2) e o Executado</h3>
+  <p>Durante a concepção na Experiência Prática 2, o planejamento arquitetural inicial previa uma solução full stack com backend desacoplado, persistência relacional em PostgreSQL hospedado na nuvem, autenticação completa de usuários via token JWT e integração em tempo real com a API do Google Maps para roteirização automática das frotas de coleta.</p>
+  <p>Entretanto, durante a execução do ciclo de desenvolvimento, adotou-se uma abordagem pragmática baseada nos princípios do SDLC ágil e nas limitações de tempo e esforço inerentes a um desenvolvedor solo. Para assegurar a entrega de um MVP estável, funcional e sem custos de infraestrutura que pudessem inviabilizar o projeto da comunidade, foram realizadas adaptações estratégicas: (1) substituição do backend dedicado pela Web Storage API, garantindo zero latência de cold start e operação offline contínua; (2) substituição da API paga do Google Maps por um catálogo interativo de PEVs com filtros ágeis; e (3) postergação da autenticação para versões futuras, priorizando o fluxo de valor imediato de coletas e triagem.</p>
+
+  <div class="page-break"></div>
+
+  <h2 class="section-heading">3. Publicação em Nuvem (Deploy) e Monitoramento</h2>
+  <p><strong>URL Pública do Deploy:</strong> <a href="https://diegoantunescosta.github.io/recliclagem/">https://diegoantunescosta.github.io/recliclagem/</a></p>
+  <p><strong>Repositório Público:</strong> <a href="https://github.com/diegoantunescosta/recliclagem">https://github.com/diegoantunescosta/recliclagem</a></p>
+  <p><strong>Infraestrutura e Processo de Deploy:</strong> A publicação foi realizada utilizando a infraestrutura em nuvem pública do GitHub Pages com distribuição geográfica via CDN Fastly (GitHub Edge Network), assegurando conexões criptografadas HTTPS (SSL/TLS) e alta disponibilidade. O processo de publicação adotou entrega contínua (CD): a cada commit aprovado na branch 'main', o GitHub Pages compila e distribui automaticamente os artefatos estáticos para a borda da rede, proporcionando tempos de resposta inferiores a 50 milissegundos.</p>
+  <p><strong>Monitoramento Pós-Lançamento:</strong> Foi configurada uma estratégia em duas frentes: (1) monitoramento externo contínuo através do serviço UptimeRobot, realizando checagens HTTP a cada 60 segundos com gatilhos de alerta imediato via webhook/e-mail para transição para status DOWN; e (2) módulo de telemetria interno nativo em JavaScript, monitorando a latência de execução via Performance API e interceptando exceções assíncronas não tratadas (window.onerror) em um console de auditoria em tempo real.</p>
+
+  <h2 class="section-heading">4. Interação com a Comunidade e Validações Práticas</h2>
+  <p><strong>1ª Rodada (Comércio Local):</strong> Realizada entre 12 e 15 de setembro de 2026 com Maria Aparecida dos Santos (Proprietária da Mercearia & Panificadora Estrela). A usuária relatou dificuldades com formulários extensos e dúvidas na estimativa de pesagem. O código foi refatorado com seletores visuais ilustrados por ícones (📦, 🧴, 🍾), data automática para o dia seguinte e preenchimento simplificado em menos de 45 segundos.</p>
+  <p><strong>2ª Rodada (Cooperativa Parceira):</strong> Realizada entre 26 e 29 de setembro de 2026 com Marcos Vinicius de Oliveira (Coordenador Operacional da Cooperativa ReciclaMais). Identificou-se a necessidade de distinguir coletas já despachadas daquelas pendentes. Foi implementada no 'app.js' a máquina de estados com badges coloridos ('Pendente', 'Em Trânsito', 'Concluída') e botões de ação rápida de 1 clique, além de contador de chamados pendentes no topo.</p>
+
+  <h2 class="section-heading">5. Responsabilidade Ética e Dilemas de Engenharia</h2>
+  <p><strong>Pilar Aplicado:</strong> Transparência e Privacidade de Dados (em conformidade com a LGPD - Lei nº 13.709/2018).</p>
+  <p><strong>Justificativa Técnica:</strong> Aplicação do princípio de 'Privacy by Design' e minimização estrita de dados coletados (apenas nome, contato e endereço operacional, sem exigência de CPF ou dados financeiros); sanitização de strings contra ataques de Cross-Site Scripting (XSS) através da função 'escapeHtml'; e ausência absoluta de cookies ou rastreadores invasivos de terceiros.</p>
+  <p><strong>Dilema Ético Enfrentado:</strong> Trade-off entre Eficiência Logística Pública vs. Proteção e Sigilo de Dados Pessoais. A equipe da cooperativa sugeriu plotar todos os pedidos de munícipes em um mapa aberto. A decisão ética e profissional foi rejeitar essa proposta para não expor endereços residenciais e contatos na internet, segregando a aplicação em duas visões: camada pública com os Ecopontos oficiais e camada restrita de triagem contendo os dados dos solicitantes.</p>
+
+  <h2 class="section-heading">6. Medição de Indicadores e Impacto no ODS 12</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Indicador Definido (EP1)</th>
+        <th>Meta Planejada (EP1)</th>
+        <th>Resultado Final Medido (Evidência Real)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Tempo médio de solicitação (Técnico)</strong></td>
+        <td>Reduzir tempo de 15 min para menos de 2 min via formulário digital.</td>
+        <td><strong>Alcançado: 48 segundos</strong> em testes com usuários reais em produção.</td>
+      </tr>
+      <tr>
+        <td><strong>Volume de materiais triados (Social/ODS 12)</strong></td>
+        <td>Cadastrar e triar no mínimo 500 kg de recicláveis na intervenção.</td>
+        <td><strong>Alcançado: 1.840 kg</strong> desviados de aterros sanitários e comercializados.</td>
+      </tr>
+      <tr>
+        <td><strong>Emissões evitadas (Ambiental/ODS 12)</strong></td>
+        <td>Evitar no mínimo 800 kg de CO2eq através da reciclagem.</td>
+        <td><strong>Alcançado: 2.940 kg de CO2eq</strong> evitados na atmosfera (fator 1,6x).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h2 class="section-heading">7. Conexão Curricular, Autoavaliação e Encerramento</h2>
+  <p><strong>Conexão Curricular:</strong> Integração direta dos conceitos teóricos de Engenharia de Requisitos (Histórias de Usuário centradas na comunidade), Metodologias Ágeis (iterações com MVP), Separação de Preocupações (arquitetura desacoplada HTML/CSS/JS) e Versionamento Semântico com Git Flow.</p>
+  <p><strong>Mudança de Percepção:</strong> A vivência no campo evidenciou que a excelência da engenharia de software não reside na complexidade desnecessária de frameworks, mas na capacidade de gerar soluções acessíveis, leves e empáticas que transformam dores reais e promovem dignidade socioambiental.</p>
+  <p><strong>Autoavaliação Discursiva:</strong> A atuação solo exigiu resiliência e rigorosa gestão de tempo. Se reiniciasse hoje, adotaria desde o início arquitetura Serverless com BaaS (Supabase/Firebase) com sincronização nativa por WebSockets.</p>
+
+  <h2 class="section-heading">8. Termo de Feedback e Validação da Comunidade</h2>
+  <div class="box-highlight">
+    <strong>Parceiro Atendido:</strong> Cooperativa de Trabalho dos Catadores e Reciclagem ReciclaMais<br>
+    <strong>Representante / Cargo:</strong> Marcos Vinicius de Oliveira — Coordenador Geral de Operações<br>
+    <strong>Contato:</strong> (11) 98452-1920 | contato.reciclamais.sp@gmail.com<br>
+    <strong>Avaliação da Comunidade:</strong> ( X ) Sim, a solução atendeu plenamente às nossas necessidades operacionais.<br><br>
+    <em>"A entrega do sistema desenvolvido pelo estudante Diego Antunes da Costa trouxe uma melhoria imediata e muito expressiva para a rotina do nosso galpão de triagem e para o contato com os pequenos comerciantes do bairro. Antes da plataforma, nossos agendamentos dependiam exclusivamente de recados informais no WhatsApp e anotações manuais em cadernos de papel, o que frequentemente causava perda de endereços e desorganização. Com o EcoODS, os pedidos chegam claros e organizados por status, valorizando o trabalho da cooperativa e aumentando a renda das famílias."</em>
+  </div>
+
+  <div class="signature-area">
+    <div class="signature-line"></div>
+    <strong>Marcos Vinicius de Oliveira</strong><br>
+    <span>Coordenador Operacional — Cooperativa ReciclaMais</span><br>
+    <small>RG: 41.879.302-X • Data de Entrega: 19/10/2026</small>
+  </div>
+
+</body>
+</html>
