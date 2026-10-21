@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoODS - Plataforma Comunitária de Gestão e Coleta Seletiva</title>
+  <meta name="description" content="Plataforma de gestão sustentável de resíduos para cooperativas e comunidade local, alinhada ao ODS 12 da ONU.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Barra de Navegação -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="brand-icon">🌱</div>
+        <div class="brand-info">
+          <h1>EcoODS</h1>
+          <span class="badge-ods">ODS 12 • Consumo Sustentável</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#metricas" class="nav-link active">Indicadores</a>
+        <a href="#agendamento" class="nav-link">Agendar Coleta</a>
+        <a href="#pontos" class="nav-link">Pontos de Coleta</a>
+        <a href="#cooperativa" class="nav-link">Painel da Cooperativa</a>
+        <a href="#monitoramento" class="nav-link nav-badge">Monitoramento <span class="status-dot"></span></a>
+      </nav>
+
+      <div class="user-badge">
+        <div class="avatar">DA</div>
+        <div class="user-details">
+          <strong>Diego Antunes</strong>
+          <span>RA: 49720198</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-tag">Projeto de Software • Experiência Prática IV</div>
+      <h2>Conectando a Comunidade e Cooperativas para um Futuro Sustentável</h2>
+      <p>Transformando resíduos em impacto socioambiental positivo. Facilite o agendamento de coletas de materiais recicláveis, rastreie pontos de descarte e fortaleça a economia circular local.</p>
+      
+      <div class="hero-actions">
+        <a href="#agendamento" class="btn btn-primary">Solicitar Coleta Gratuita</a>
+        <a href="#cooperativa" class="btn btn-outline">Acessar Painel de Triagem</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Indicadores / Métricas de Impacto -->
+  <section id="metricas" class="metrics-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="sub-title">Métricas em Tempo Real</span>
+        <h3>Impacto Socioambiental Acumulado</h3>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon bg-green">📦</div>
+          <div class="metric-data">
+            <span class="metric-value" id="totalKg">1.840</span>
+            <span class="metric-unit">kg coletados</span>
+          </div>
+          <div class="metric-label">Materiais Reciclados</div>
+          <div class="metric-trend positive">+18% este mês</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon bg-blue">🚚</div>
+          <div class="metric-data">
+            <span class="metric-value" id="totalColetas">142</span>
+            <span class="metric-unit">coletas</span>
+          </div>
+          <div class="metric-label">Atendimentos Realizados</div>
+          <div class="metric-trend positive">+24 novos agendamentos</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon bg-amber">⚡</div>
+          <div class="metric-data">
+            <span class="metric-value" id="co2Evitado">2.950</span>
+            <span class="metric-unit">kg CO₂eq</span>
+          </div>
+          <div class="metric-label">Emissões Evitadas</div>
+          <div class="metric-trend positive">Meta ODS atingida em 88%</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-icon bg-purple">🤝</div>
+          <div class="metric-data">
+            <span class="metric-value" id="familiasImpactadas">36</span>
+            <span class="metric-unit">famílias</span>
+          </div>
+          <div class="metric-label">Catadores Beneficiados</div>
+          <div class="metric-trend positive">Renda direta gerada</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conteúdo Principal em Duas Colunas -->
+  <main class="main-content container">
+    <div class="content-grid">
+      
+      <!-- Coluna 1: Formulário de Agendamento -->
+      <section id="agendamento" class="card form-card">
+        <div class="card-header">
+          <div class="header-icon">📝</div>
+          <div>
+            <h4>Novo Agendamento de Coleta</h4>
+            <p>Cadastre materiais recicláveis para retirada pela cooperativa</p>
+          </div>
+        </div>
+
+        <form id="coletaForm" class="coleta-form">
+          <div class="form-group">
+            <label for="nomeResponsavel">Nome do Solicitante / Estabelecimento *</label>
+            <input type="text" id="nomeResponsavel" placeholder="Ex: Padaria Bela Vista ou Maria Silva" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefone">Telefone / WhatsApp *</label>
+              <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
+            </div>
+            <div class="form-group">
+              <label for="tipoMaterial">Tipo de Material Predominante *</label>
+              <select id="tipoMaterial" required>
+                <option value="">Selecione...</option>
+                <option value="Papelão / Papel">📦 Papelão e Papel</option>
+                <option value="Plásticos Diversos">🧴 Plásticos e Garrafas PET</option>
+                <option value="Vidro">🍾 Vidros (garrafas e potes)</option>
+                <option value="Metais / Alumínio">🥫 Latas de Alumínio e Metais</option>
+                <option value="Eletrônicos">💻 Sucata Eletrônica / Pilhas</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="pesoEstimado">Peso Estimado (kg) *</label>
+              <input type="number" id="pesoEstimado" min="1" max="1000" placeholder="Ex: 25" required>
+            </div>
+            <div class="form-group">
+              <label for="dataPreferencia">Data de Preferência *</label>
+              <input type="date" id="dataPreferencia" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="endereco">Endereço Completo com Ponto de Referência *</label>
+            <input type="text" id="endereco" placeholder="Rua das Flores, 120 - Bairro Centro" required>
+          </div>
+
+          <div class="form-group">
+            <label for="observacoes">Observações Adicionais (opcional)</label>
+            <textarea id="observacoes" rows="2" placeholder="Ex: Materiais já ensacados e limpos na calçada"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Confirmar Solicitação de Coleta</button>
+        </form>
+      </section>
+
+      <!-- Coluna 2: Pontos de Coleta Voluntária (PEV) -->
+      <section id="pontos" class="card pev-card">
+        <div class="card-header">
+          <div class="header-icon">📍</div>
+          <div>
+            <h4>Pontos de Entrega Voluntária (PEVs)</h4>
+            <p>Mapeamento de ecopontos e locais parceiros para descarte direto</p>
+          </div>
+        </div>
+
+        <div class="pev-filters">
+          <button class="filter-pill active" data-filter="todos">Todos</button>
+          <button class="filter-pill" data-filter="Papelão">Papel</button>
+          <button class="filter-pill" data-filter="Plástico">Plástico</button>
+          <button class="filter-pill" data-filter="Eletrônicos">Eletrônicos</button>
+        </div>
+
+        <div class="pev-list" id="pevList">
+          <!-- Inserido dinamicamente via JS -->
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Seção Painel da Cooperativa / Triagem -->
+    <section id="cooperativa" class="card cooperativa-card">
+      <div class="card-header">
+        <div class="header-icon">📋</div>
+        <div class="header-title-box">
+          <h4>Painel Operacional da Cooperativa (Triagem)</h4>
+          <p>Gestão diária de chamados, roteirização e confirmação de recebimento</p>
+        </div>
+        <div class="card-header-actions">
+          <span class="badge badge-info" id="contadorPendentes">0 Pendentes</span>
+          <button id="btnLimparDemo" class="btn btn-sm btn-ghost">Restaurar Dados Padrão</button>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="coleta-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Solicitante</th>
+              <th>Material</th>
+              <th>Qtd. Est.</th>
+              <th>Endereço</th>
+              <th>Data</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="coletasTableBody">
+            <!-- Linhas geradas via JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Seção de Monitoramento Pós-Lançamento e Saúde da Aplicação -->
+    <section id="monitoramento" class="card monitor-card">
+      <div class="card-header">
+        <div class="header-icon">📡</div>
+        <div>
+          <h4>Monitoramento de Aplicação Pós-Lançamento (Health Check)</h4>
+          <p>Painel de telemetria, integridade de serviços e disponibilidade em nuvem</p>
+        </div>
+        <div class="system-status-indicator">
+          <span class="pulse-green"></span>
+          <span class="status-text">Todos os sistemas operacionais (99.98% uptime)</span>
+        </div>
+      </div>
+
+      <div class="monitor-grid">
+        <div class="monitor-item">
+          <span class="monitor-title">Serviço de Deploy (Cloud Hosting)</span>
+          <div class="monitor-val online">Operacional • Edge Network</div>
+          <span class="monitor-sub">Latência de resposta: <strong id="latencyDisplay">28 ms</strong></span>
+        </div>
+
+        <div class="monitor-item">
+          <span class="monitor-title">Camada de Persistência (Storage / DB)</span>
+          <div class="monitor-val online">Sincronizado • Local & Cloud Sync</div>
+          <span class="monitor-sub">Integridade de Schema: <strong>100% OK</strong></span>
+        </div>
+
+        <div class="monitor-item">
+          <span class="monitor-title">Tratamento de Erros & Telemetria</span>
+          <div class="monitor-val online">Ativo (Captura Global via Window.onerror)</div>
+          <span class="monitor-sub">Exceções críticas últimas 24h: <strong>0 erros</strong></span>
+        </div>
+
+        <div class="monitor-item">
+          <span class="monitor-title">Monitoramento de Uptime (Heartbeat)</span>
+          <div class="monitor-val online">UptimeRobot / Health Check Configurado</div>
+          <span class="monitor-sub">Intervalo de checagem: <strong>A cada 60s</strong></span>
+        </div>
+      </div>
+
+      <!-- Log em tempo real -->
+      <div class="console-box">
+        <div class="console-header">
+          <span>>_ Console de Eventos & Telemetria em Tempo Real</span>
+          <button id="btnLimparLogs" class="btn-xs">Limpar Logs</button>
+        </div>
+        <div class="console-body" id="consoleLogs">
+          <!-- Logs dinâmicos -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Alinhamento ODS 12 -->
+    <section class="card ods-info-card">
+      <div class="ods-header">
+        <div class="ods-badge-large">
+          <span class="ods-num">12</span>
+          <span class="ods-name">Consumo e Produção Responsáveis</span>
+        </div>
+        <div class="ods-desc">
+          <h4>Compromisso com a Agenda 2030 da ONU</h4>
+          <p>Esta solução atua diretamente na <strong>Meta 12.5</strong> ("Até 2030, reduzir substancialmente a geração de resíduos por meio da prevenção, redução, reciclagem e reúso") e na <strong>Meta 12.8</strong> ("Garantir que as pessoas tenham informação relevante e conscientização para o desenvolvimento sustentável").</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <p><strong>EcoODS</strong> • Projeto de Software - Experiência Prática IV</p>
+        <p class="footer-sub">Desenvolvido por <strong>Diego Antunes da Costa</strong> (RA: 49720198) • 2º Semestre</p>
+      </div>
+      <div class="footer-links">
+        <a href="#metricas">Métricas</a>
+        <a href="#agendamento">Agendar</a>
+        <a href="#cooperativa">Triagem</a>
+        <a href="#monitoramento">Monitoramento</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
