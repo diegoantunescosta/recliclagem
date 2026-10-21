@@ -47,8 +47,8 @@ Alinhada diretamente ao **Objetivo de Desenvolvimento Sustentável (ODS) 12 da O
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/diego-antunes/projeto-ods.git
-   cd projeto-ods
+   git clone https://github.com/diegoantunescosta/recliclagem.git
+   cd recliclagem
    ```
 
 2. Abra o arquivo `index.html` diretamente em seu navegador web (Google Chrome, Firefox, Edge) ou utilize a extensão **Live Server** no VS Code.
@@ -57,7 +57,7 @@ Alinhada diretamente ao **Objetivo de Desenvolvimento Sustentável (ODS) 12 da O
 
 ## ☁️ 5. Publicação (Deploy) e Monitoramento
 
-- **URL de Produção:** `https://diego-antunes.github.io/projeto-ods/` *(ou link Vercel)*
+- **URL de Produção:** `https://diegoantunescosta.github.io/recliclagem/` *(ou link Vercel)*
 - **Monitoramento de Disponibilidade:**
   - Configurado via **UptimeRobot** monitorando a rota principal a cada 60 segundos com alerta para taxa de erro > 0%.
   - Console interno de telemetria acessível diretamente no painel inferior da aplicação.
